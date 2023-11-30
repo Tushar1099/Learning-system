@@ -1,0 +1,5 @@
+package com.casestudy.courseservice.exception;
+
+public class ErrorDetails {
+
+}

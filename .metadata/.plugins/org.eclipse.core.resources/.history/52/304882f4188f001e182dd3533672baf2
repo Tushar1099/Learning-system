@@ -1,0 +1,5 @@
+package com.casestudy.mentorservice.service.impl;
+
+public class MentorServiceImpl {
+
+}

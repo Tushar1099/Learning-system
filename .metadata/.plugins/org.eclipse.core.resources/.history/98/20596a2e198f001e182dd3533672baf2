@@ -1,0 +1,69 @@
+package com.casestudy.mentorservice.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.casestudy.mentorservice.dto.MentorDto;
+import com.casestudy.mentorservice.entity.Mentor;
+import com.casestudy.mentorservice.mapper.MentorMapper;
+import com.casestudy.mentorservice.repo.MentorRepo;
+import com.casestudy.mentorservice.service.MentorService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class MentorServiceImpl implements MentorService{
+	
+	
+	private MentorRepo mentorRepo;
+	
+	@Override
+	public MentorDto saveMentor(MentorDto mentorDto) {
+		Mentor mentor = MentorMapper.mapToMentor(mentorDto);
+		Mentor savedMentor = mentorRepo.save(mentor);
+		MentorDto savedMentorDto = MentorMapper.mapToMentorDto(savedMentor);
+		return savedMentorDto;
+	}
+
+	@Override
+	public UserDto getUserById(Long userId) {
+		User user = userRepo.findById(userId).get();
+		UserDto userDto = UserMapper.mapToUserDto(user);
+		return userDto;
+	}
+
+	@Override
+	public List<UserDto> getAllUsers() {
+		List<User> allUsers = userRepo.findAll();
+		List<UserDto> userList = new ArrayList(); 
+		for (User user : allUsers) {
+			userList.add(UserMapper.mapToUserDto(user));
+		}
+		return userList;
+	}
+
+	@Override
+	public UserDto updateUser(UserDto userDto) {
+		User userExist = userRepo.findById(userDto.getUserId()).get();
+		userExist.setUserName(userDto.getUserName());
+		userExist.setUserEmail(userDto.getUserEmail());
+		userExist.setUserRole(userDto.getUserRole());
+		
+		User updateUser = userRepo.save(userExist);
+		return UserMapper.mapToUserDto(updateUser);
+	}
+
+	@Override
+	public void deleteUser(Long userId) {
+		userRepo.deleteById(userId);
+	}
+
+	
+
+	
+	
+}

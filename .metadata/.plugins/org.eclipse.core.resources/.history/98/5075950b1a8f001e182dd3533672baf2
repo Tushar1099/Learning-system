@@ -1,0 +1,5 @@
+package com.casestudy.mentorservice.controller;
+
+public class MentorController {
+
+}

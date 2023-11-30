@@ -1,0 +1,20 @@
+package com.casestudy.courseservice.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class CourseNotFoundException extends RuntimeException {
+	
+	private String courseName;
+	private String fieldName;
+	private Long fieldValue;
+	public CourseNotFoundException(String courseName, String fieldName, Long fieldValue) {
+		super(String.format("%s not found with %s: %s",courseName,fieldName, fieldValue));
+		this.courseName = courseName;
+		this.fieldName = fieldName;
+		this.fieldValue = fieldValue;
+	}
+
+	
+}

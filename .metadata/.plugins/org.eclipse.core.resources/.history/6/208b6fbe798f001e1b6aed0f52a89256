@@ -1,0 +1,5 @@
+package com.casestudy.taskservice.service.impl;
+
+public class TaskServiceImpl {
+
+}

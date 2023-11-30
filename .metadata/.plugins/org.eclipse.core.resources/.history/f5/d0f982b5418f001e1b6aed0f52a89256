@@ -1,0 +1,8 @@
+package com.casestudy.adminservice.service.impl;
+
+import com.casestudy.adminservice.service.AdminService;
+
+public class AdminServiceImpl implements AdminService{
+
+	
+}

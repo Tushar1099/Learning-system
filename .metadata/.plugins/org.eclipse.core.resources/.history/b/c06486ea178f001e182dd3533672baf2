@@ -1,0 +1,5 @@
+package com.casestudy.mentorservice.repo;
+
+public interface MentorRepo {
+
+}

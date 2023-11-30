@@ -1,0 +1,52 @@
+package com.casestudy.taskservice.service.impl;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.casestudy.taskservice.dto.TaskDto;
+import com.casestudy.taskservice.entity.Task;
+import com.casestudy.taskservice.repo.TaskRepo;
+import com.casestudy.taskservice.service.TaskService;
+
+@Service
+public class TaskServiceImpl implements TaskService{
+
+	private TaskRepo taskRepo;
+	
+	private ModelMapper modelMapper;
+	
+	@Override
+	public TaskDto saveTaskDto(TaskDto taskDto) {
+		Task task = modelMapper.map(taskDto, Task.class);
+		Task savedTask = taskRepo.save(task);
+		TaskDto savedTaskDto = modelMapper.map(savedTask, TaskDto.class);
+		return savedTaskDto;
+	}
+
+	@Override
+	public TaskDto getTaskById(Long taskId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TaskDto> getAllTasks() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TaskDto updateTask(TaskDto taskDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteTask(Long taskId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.casestudy.adminservice.repo;
+
+public interface AdminRepo {
+
+}

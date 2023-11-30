@@ -1,0 +1,5 @@
+package com.casestudy.adminservice.service.copy;
+
+public interface AdminService {
+
+}

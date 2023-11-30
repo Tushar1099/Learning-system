@@ -1,0 +1,10 @@
+package com.casestudy.courseservice.exception;
+
+public class CourseAlreadyExistException extends RuntimeException{
+	
+	private String message;
+	
+	public CourseAlreadyExistException(String message) {
+		super(message);
+	}
+}

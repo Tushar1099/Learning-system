@@ -1,0 +1,5 @@
+package com.casestudy.courseservice.service.impl;
+
+public class CourseServiceImpl {
+
+}

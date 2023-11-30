@@ -1,0 +1,12 @@
+package com.casestudy.adminservice.entity;
+
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Data
+@Entity
+public class Admin {
+	private Long adminId;
+	private String adminName;
+	private String adminEmail;
+}
